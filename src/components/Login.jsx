@@ -12,9 +12,12 @@ function Login() {
   const { register, handleSubmit } = useForm();
   const [error, setError] = useState("");
   const login = async (data) => {
+    // console.log(`data :: ${data}`);
+
     setError("");
     try {
       const session = await authServices.login(data);
+      // console.log(`session :: ${session}`);
       if (session) {
         const userdata = await authServices.getCurrentUser();
         if (userdata) dispatch(authLogin(userdata));

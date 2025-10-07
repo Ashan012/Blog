@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 
 function Header() {
   const authStatus = useSelector((state) => state.auth.status);
+
   const navigate = useNavigate();
 
   const navItems = [
@@ -25,7 +26,7 @@ function Header() {
     },
     {
       name: "All Post",
-      slug: "/all-post",
+      slug: "/all-posts",
       active: authStatus,
     },
     {
